@@ -2,12 +2,15 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Signup from "./User/Signup";
 import Signin from "./User/Signin";
+import Home from "./core/Home";
 
 const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/signup" exact componeup={Signup} />
+        <Route path="/" exact component={Home} />{" "}
+        {/* setting the path to "/" so that the main landing page is home. */}
+        <Route path="/signup" exact component={Signup} />
         <Route path="/signin" exact component={Signin} />
       </Switch>
     </BrowserRouter>
