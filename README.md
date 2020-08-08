@@ -1,3 +1,9 @@
+Main dependencies:
+
+<img src="https://img.shields.io/badge/react-v16.13.1-<COLOR>">
+<img src="https://img.shields.io/badge/react_dom-v16.13.1-<COLOR>">
+<img src="https://img.shields.io/badge/react_scripts-v3.4.1-<COLOR>">
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
