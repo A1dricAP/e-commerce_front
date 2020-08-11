@@ -3,13 +3,11 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Signup from "./User/Signup";
 import Signin from "./User/Signin";
 import Home from "./core/Home";
-import Menu from "./core/Menu";
 import App from "./App";
 
 const Routes = () => {
   return (
     <BrowserRouter>
-      <Menu />
       <Switch>
         <Route path="/" exact component={Home} />{" "}
         {/* setting the path to "/" so that the main landing page is home. */}
