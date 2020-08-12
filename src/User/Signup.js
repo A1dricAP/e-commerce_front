@@ -131,7 +131,7 @@ const Signup = () => {
       description="Signed up to Node react App"
       className="container col-md-8 offset-md-2"
     >
-      {/* {showSuccess()} */}
+      {showSuccess()}
       {showError()}
       {/* using the signup form created above to be displayed here. */}
       {signUpForm()}
