@@ -14,7 +14,7 @@ const Signup = () => {
     name: "",
     email: "",
     password: "",
-    error: "",
+    error: true,
     success: false,
   });
 
@@ -52,17 +52,18 @@ const Signup = () => {
 
   const clickSubmit = (event) => {
     event.preventDefault();
+    setValues({ ...values, error: false });
     signUp({ name, email, password }) // sending these values as an object to signUp()
       .then((data) => {
         if (data.error) {
-          setValues({ ...values, error: data.error, success: false });
+          setValues({ ...values, error: true, success: false });
         } else {
           setValues({
             ...values,
             name: "",
             email: "",
             password: "",
-            error: "",
+            error: false,
             success: true,
           });
         }
@@ -107,23 +108,23 @@ const Signup = () => {
     </form>
   );
 
-  const showError = () => (
-    <div
-      className="alert alert-danger"
-      style={{ display: error ? "" : "none" }}
-    >
-      {error}
-    </div>
-  );
+  // const showError = () => (
+  //   <div
+  //     className="alert alert-danger"
+  //     style={{ display: error ? "" : "none" }}
+  //   >
+  //     {error}
+  //   </div>
+  // );
 
-  const showSuccess = () => (
-    <div
-      className="alert alert-info"
-      style={{ display: success ? "" : "none" }}
-    >
-      New account created. Please sign in, Bro.
-    </div>
-  );
+  // const showSuccess = () => (
+  //   <div
+  //     className="alert alert-info"
+  //     style={{ display: success ? "" : "none" }}
+  //   >
+  //     New account created. Please sign in, Bro.
+  //   </div>
+  // );
 
   return (
     <Layout
@@ -131,11 +132,11 @@ const Signup = () => {
       description="Signed up to Node react App"
       className="container col-md-8 offset-md-2"
     >
-      {showSuccess()}
-      {showError()}
+      {/* {showSuccess()} */}
+      {/* {showError()} */}
       {/* using the signup form created above to be displayed here. */}
       {signUpForm()}
-      {JSON.stringify(values)}
+      {/* {JSON.stringify(values)} */}
     </Layout>
   );
 };
