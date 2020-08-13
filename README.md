@@ -1,8 +1,8 @@
-<img src="https://img.shields.io/badge/html-red">
-<img src="https://img.shields.io/badge/css-magenta">
-<img src="https://img.shields.io/badge/javascript-yellow">
+![GitHub language count](https://img.shields.io/github/languages/count/A1dricAP/e-commerce_front?color=green)
+![GitHub top language](https://img.shields.io/github/languages/top/A1dricAP/e-commerce_front)
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/A1dricAP/e-commerce_front)
+<img src="https://img.shields.io/badge/dependencies-up to date-<COLOR>">
 <img src="https://img.shields.io/badge/license-MIT-blue">
 
 <img src="https://img.shields.io/badge/Node-v12.18.1-yellow">
