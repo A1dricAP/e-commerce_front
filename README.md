@@ -1,11 +1,16 @@
-Main dependencies:
+<img src="https://img.shields.io/badge/html-red">
+<img src="https://img.shields.io/badge/css-magenta">
+<img src="https://img.shields.io/badge/javascript-yellow">
 
-<img src="https://img.shields.io/badge/Node-v12.18.1-<COLOR>">
-<img src="https://img.shields.io/badge/npm-v6.14.5-<COLOR>">
+![GitHub repo size](https://img.shields.io/github/repo-size/A1dricAP/e-commerce_front)
+<img src="https://img.shields.io/badge/license-MIT-blue">
+
+<img src="https://img.shields.io/badge/Node-v12.18.1-yellow">
+<img src="https://img.shields.io/badge/npm-v6.14.5-yellow">
+
 <img src="https://img.shields.io/badge/react-v16.13.1-<COLOR>">
 <img src="https://img.shields.io/badge/react_dom-v16.13.1-<COLOR>">
 <img src="https://img.shields.io/badge/react_scripts-v3.4.1-<COLOR>">
-<img src="https://img.shields.io/badge/license-MIT-blue">
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
