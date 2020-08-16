@@ -2,19 +2,20 @@
 
 import React, { useState } from "react";
 import Layout from "../core/layout";
-import { API } from "../config";
+import { Link } from "react-router-dom";
+import { signUp } from "../auth";
 // require("dotenv").config();
 
 /*----------------------------------------------------------------------------------------------------*/
 
 const Signup = () => {
-  // creating this destructured const to use "useState" function.
-  // this displays empty objects, which gets updated with the help of handleChange().
+  //  creating this destructured const to use "useState" function.
+  // ! this displays empty objects, which gets updated with the help of handleChange().
   const [values, setValues] = useState({
     name: "",
     email: "",
     password: "",
-    error: true,
+    error: "",
     success: false,
   });
 
@@ -29,26 +30,6 @@ const Signup = () => {
   };
 
   /*----------------------------------------------------------------------------------------------------*/
-
-  // this method comprehends the values received as user object.
-  const signUp = (user) => {
-    // sending the body of this fetch() with POST method
-    // to the already created signup route in the server backend that connects with the database.
-    return fetch(`${API}/signup`, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((response) => {
-        return response.json;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
 
   const clickSubmit = (event) => {
     event.preventDefault();
@@ -73,6 +54,28 @@ const Signup = () => {
   /*----------------------------------------------------------------------------------------------------*/
 
   // creating this jsx template for the signup form to be displayed.
+
+  // const showSuccess = () => {
+  //   if (success) {
+  //     return (
+  //       <div
+  //         className="alert alert-info"
+  //         // style={{ display: error ? "" : "none" }}
+  //       >
+  //         New account created. Please <Link to="/signin">Signin, </Link> Bro
+  //       </div>
+  //     );
+  //   }
+  // };
+  // const showError = () => (
+  //   <div
+  //     className="alert alert-danger"
+  //     style={{ display: error ? "" : "none" }}
+  //   >
+  //     {error}
+  //   </div>
+  // );
+
   const signUpForm = () => (
     <form>
       <div className="form-group">
@@ -108,32 +111,14 @@ const Signup = () => {
     </form>
   );
 
-  // const showError = () => (
-  //   <div
-  //     className="alert alert-danger"
-  //     style={{ display: error ? "" : "none" }}
-  //   >
-  //     {error}
-  //   </div>
-  // );
-
-  // const showSuccess = () => (
-  //   <div
-  //     className="alert alert-info"
-  //     style={{ display: success ? "" : "none" }}
-  //   >
-  //     New account created. Please sign in, Bro.
-  //   </div>
-  // );
-
   return (
     <Layout
       title="SignUp"
       description="Signed up to Node react App"
       className="container col-md-8 offset-md-2"
     >
-      {/* {showSuccess()} */}
-      {/* {showError()} */}
+      {/* {showError()}
+      {showSuccess()} */}
       {/* using the signup form created above to be displayed here. */}
       {signUpForm()}
       {/* {JSON.stringify(values)} */}
