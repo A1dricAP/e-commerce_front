@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Layout from "../core/layout";
 import { Redirect } from "react-router-dom";
-import { signin } from "../auth";
+import { signin, auth, authenticate } from "../auth";
 // require("dotenv").config();
 
 /*----------------------------------------------------------------------------------------------------*/
@@ -12,8 +12,8 @@ const Signin = () => {
   //  creating this destructured const to use "useState" function.
   // ! this displays empty objects, which gets updated with the help of handleChange().
   const [values, setValues] = useState({
-    email: "",
-    password: "",
+    email: "pereiraaldric@yahoo.com",
+    password: "aldric123",
     error: "",
     loading: false,
     redirectToReferrer: false,
@@ -39,9 +39,11 @@ const Signin = () => {
         if (data.error) {
           setValues({ ...values, error: true, loading: false });
         } else {
-          setValues({
-            ...values,
-            redirectToReferrer: true,
+          authenticate(data, () => {
+            setValues({
+              ...values,
+              redirectToReferrer: true,
+            });
           });
         }
       });
