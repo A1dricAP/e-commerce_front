@@ -12,8 +12,8 @@ const Signin = () => {
   //  creating this destructured const to use "useState" function.
   // ! this displays empty objects, which gets updated with the help of handleChange().
   const [values, setValues] = useState({
-    email: "pereiraaldric@yahoo.com",
-    password: "aldric123",
+    email: "",
+    password: "",
     error: "",
     loading: false,
     redirectToReferrer: false,

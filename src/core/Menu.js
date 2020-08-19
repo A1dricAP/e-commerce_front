@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 //react-router-dom is basically a file from react to take care of the routing within our app.
+import { signout } from "../auth";
 
 //creating a sort of middelware for changing the color of the button tab.
 const isActive = (history, path) => {
@@ -38,6 +39,19 @@ const Menu = (
         >
           SignUp
         </Link>
+      </li>
+      <li className="nav-item">
+        <span
+          className="nav-link"
+          style={{ cursor: "pointer", color: "#ffffff" }}
+          onClick={() =>
+            signout(() => {
+              history.push("/");
+            })
+          }
+        >
+          SignOut
+        </span>
       </li>
     </ul>
   </div>

@@ -1,3 +1,5 @@
+"use Strict";
+
 import React, { useState } from "react";
 import Layout from "../core/layout";
 import { API } from "../config";
@@ -51,7 +53,7 @@ const SignUp = () => {
     event.preventDefault(); // ? using this method so that the browser does not reload when clicked.
     signup({ name, email, password }) // ? using {}, because we're sending the data as object, which will be recieved as "user"
       .then((data) => {
-        console.log(data);
+        console.log("this is clicksubmit: \n" + data);
 
         if (data.error) {
           setValues({ ...values, error: data.error, success: false });
@@ -61,8 +63,8 @@ const SignUp = () => {
             name: "",
             email: "",
             password: "",
-            error: true,
-            success: false,
+            error: false,
+            success: true,
           });
         }
       });
