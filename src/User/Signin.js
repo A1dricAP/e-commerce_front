@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Layout from "../core/layout";
 import { Redirect } from "react-router-dom";
-import { signin, auth, authenticate } from "../auth";
+import { signin, authenticate, isAuthenticated } from "../auth";
 // require("dotenv").config();
 
 /*----------------------------------------------------------------------------------------------------*/
@@ -21,6 +21,7 @@ const Signin = () => {
 
   // destructuring the values.
   const { email, password, error, loading, redirectToReferrer } = values;
+  const {user}=isAuthenticated()
 
   // this is a higher order function. Higher order functions are functions returning another function.
   // this function is used to update the values of the previously generated values.
@@ -37,6 +38,8 @@ const Signin = () => {
     signin({ email, password }) // sending these values as an object to signUp()
       .then((data) => {
         if (data.error) {
+          console.log("IF part of clicksubmit(signin)");
+
           setValues({ ...values, error: true, loading: false });
         } else {
           authenticate(data, () => {
@@ -45,6 +48,7 @@ const Signin = () => {
               redirectToReferrer: true,
             });
           });
+          console.log("else part of clicksubmit(signin)");
         }
       });
   };
@@ -65,7 +69,11 @@ const Signin = () => {
 
   const redirectUser = () => {
     if (redirectToReferrer) {
-      return <Redirect to="/" />;
+      if(user && user.role===1){
+        return <Redirect to="/admin/dashboard" />;
+      }else{
+        return <Redirect to="/user/dashboard" />;
+      }
     }
   };
 
