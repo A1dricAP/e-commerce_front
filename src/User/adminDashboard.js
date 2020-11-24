@@ -15,7 +15,7 @@ const adminDashboard=()=>{
                     <li className='list-group-item' >
                         <Link className='nav-link' to='/create/category'>Create Category</Link>
                     </li>
-                    <li className='list-group-item'>{email}
+                    <li className='list-group-item'>
                         <Link className='nav-link' to='/create/product'>Create Product</Link>
                     </li>
                 </ul>
@@ -23,7 +23,7 @@ const adminDashboard=()=>{
         )
     }
 
-    const AdminInfo=()=>{
+    const adminInfo=()=>{
         return(
             <div className='card mb-5'>
                 <h3 className='card-header'>Admin Info</h3>

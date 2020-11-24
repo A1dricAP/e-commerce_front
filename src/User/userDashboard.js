@@ -15,7 +15,7 @@ const Dashboard=()=>{
                     <li className='list-group-item' >
                         <Link className='nav-link' to='/cart'>My Cart</Link>
                     </li>
-                    <li className='list-group-item'>{email}
+                    <li className='list-group-item'>
                         <Link className='nav-link' to='/profile/update'>Update Profile.</Link>
                     </li>
                 </ul>

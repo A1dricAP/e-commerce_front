@@ -22,13 +22,26 @@ const Menu = (
           Home
         </Link>
       </li>
-      <li className="nav-item">
+
+     {isAuthenticated() && isAuthenticated().user.role === 0 && (
+        <li className="nav-item">
         <Link className="nav-link" style={isActive(history, "/user/dashboard")} to="/user/dashboard">
           Dashboard
         </Link>
       </li>
+     )}
+
+     {isAuthenticated() && isAuthenticated().user.role === 1 && (
+        <li className="nav-item">
+        <Link className="nav-link" style={isActive(history, "/admin/dashboard")} to="/admin/dashboard">
+          Dashboard
+        </Link>
+      </li>
+     )}
+
       {!isAuthenticated() && (
-        <Fragment><li className="nav-item">
+        <Fragment>
+      <li className="nav-item">
         <Link
           className="nav-link"
           style={isActive(history, "/signin")}
@@ -37,6 +50,7 @@ const Menu = (
           SignIn
         </Link>
       </li>
+
       <li className="nav-item">
         <Link
           className="nav-link"
@@ -45,8 +59,12 @@ const Menu = (
         >
           SignUp
         </Link>
-      </li></Fragment>
+      </li>
+
+      </Fragment>
       )}
+
+
       {isAuthenticated()&&(
         <li className="nav-item">
         <span
