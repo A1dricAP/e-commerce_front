@@ -52,8 +52,24 @@ const AddProduct=()=>{
     }
 
 
-    const clickSubmit=()=>{
-        //
+    const clickSubmit=(event)=>{
+        event.preventDefault()
+        setValues({...values, error:'', loading:true})
+        createProduct(user._id,token,formData)
+        .then(data=>{
+            if(data.error){
+                setValues({...values, error:data.error})
+            }else{
+                setValues({...values, 
+                    name:'',
+                    description:'', 
+                    price:'', 
+                    photo:'', 
+                    quantity:'', 
+                    loading:false,
+                    createdProduct:data.name})
+            }
+        })
     }
 
 
@@ -86,6 +102,7 @@ const AddProduct=()=>{
             <div className='form-group'>
                 <label className='text-muted'>Category</label>
                 <select onChange={handleChange('category')} className='form-control'> 
+                <option value='5fbd38dd3135fe2d3361d16d'>Python</option>
                 <option value='5fbd38dd3135fe2d3361d16d'>JavaScript</option>
                 </select>
             </div>
