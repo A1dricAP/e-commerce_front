@@ -23,13 +23,17 @@ const Shop=()=>{
         init()
     },[])
 
+    const handleFilter=(filters,filterBy)=>{
+        console.log("SHOP",filters,filterBy)
+    }
+
     return(
         <Layout title="Shop page" description="Search and find your books!" className='container-fluid'>
             <div className='row'>
                 <div className='col-4'>
                     <h4>Filter by categories!</h4>
                     <ul>
-                    <CheckBox categories={categories}/>
+                    <CheckBox categories={categories} handleFilter={filters=>  handleFilter(  filters,'category')}/>
                     </ul>
                 </div>
                 <div className='col-8'>right</div>

@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 
 
 
-const CheckBox=({categories})=>{
+const CheckBox=({categories, handleFilter})=>{
 
     const [checked,setChecked]=useState([])
 
@@ -17,8 +17,9 @@ const CheckBox=({categories})=>{
         }else{
             newCheckedCategoryId.splice(currentCategoryId, 1)
         }
-        console.log(newCheckedCategoryId)
+        // console.log(newCheckedCategoryId)
         setChecked(newCheckedCategoryId)
+        handleFilter(newCheckedCategoryId)
     }
 
 
