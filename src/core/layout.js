@@ -4,6 +4,7 @@ import React from "react";
 
 // importing the Menu from "Core/Menu" to work directly with the layout instead of "Router.js"
 import Menu from "./Menu";
+import '../styles.css'
 
 // creating a component, with the idea of it being a layout for other files to use.
 // in the name of "Layout"; to be imported by other files.

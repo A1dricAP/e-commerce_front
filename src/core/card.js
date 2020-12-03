@@ -1,6 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import ShowImage from './showImage'
+import '../styles.css'
+
 
 const Card=({product})=>{
     return(
@@ -14,7 +16,9 @@ const Card=({product})=>{
               <Link to='/'>
                   <button className='btn btn-outline-primary mt-2 mb-2'>View Product</button>
               </Link>
+              
               <button className='btn btn-outline-warning mt-2 mb-2'>Add to cart</button>
+              
             </div>
         </div>
 
